@@ -1,0 +1,13 @@
+{
+  "projectId": "ll1ness-website",
+  "orgId": "ll1ness",
+  "settings": {
+    "framework": "other",
+    "rootDirectory": ".",
+    "serverlessFunctions": {
+      "include": [
+        "server.js"
+      ]
+    }
+  }
+}

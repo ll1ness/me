@@ -1,0 +1,44 @@
+# GitHub Actions workflow for deploying to Vercel
+name: Deploy to Vercel
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["classic"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions for the workflow
+permissions:
+  contents: read
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "vercel"
+  cancel-in-progress: false
+
+jobs:
+  # Deploy to Vercel
+  deploy:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+
+      - name: Build Project Artifacts
+        run: vercel build --token=$VERCEL_TOKEN
+
+      - name: Deploy Project Artifacts
+        run: vercel deploy --token=$VERCEL_TOKEN --prebuilt
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

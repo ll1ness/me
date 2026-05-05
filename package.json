@@ -2,20 +2,17 @@
   "name": "ll1ness-website",
   "version": "1.0.0",
   "description": "ЛІНЕСС website with AppWrite integration",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
     "setup-appwrite": "node setup-appwrite.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "production": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "appwrite": "^11.0.0",
     "dotenv": "^16.0.0"
-  },
-  "devDependencies": {
-    "vite": "^5.0.0"
   },
   "keywords": [
     "appwrite",
@@ -23,5 +20,31 @@
     "portfolio"
   ],
   "author": "ЛІНЕСС",
-  "license": "MIT"
+  "license": "MIT",
+  "vercel": {
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "^/api/(.*)$",
+        "dest": "api/$1"
+      },
+      {
+        "src": "^/appwrite/(.*)$",
+        "dest": "appwrite/$1"
+      },
+      {
+        "src": "^/[^.]+$",
+        "dest": "/index.html"
+      },
+      {
+        "src": "(.*)",
+        "dest": "$1"
+      }
+    ]
+  }
 }
