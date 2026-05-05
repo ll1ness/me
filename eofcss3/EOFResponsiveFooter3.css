@@ -1,0 +1,97 @@
+/* ===== Простая адаптивность футера ===== */
+
+/* Мобильное меню */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-extended {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-section ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-legal-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Десктоп */
+@media (min-width: 769px) {
+    .footer {
+        padding: 50px 0 25px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        gap: 40px;
+    }
+
+    .footer-links {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        gap: 30px;
+    }
+
+    .footer-extended {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+        text-align: left;
+    }
+
+    .footer-section ul {
+        flex-direction: column;
+    }
+
+    .footer-legal {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .footer-legal-links {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+}

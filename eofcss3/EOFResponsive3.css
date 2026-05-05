@@ -1,0 +1,227 @@
+/* ===== Простая адаптивность ===== */
+
+/* Основной контейнер */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+/* Адаптивная типографика */
+h1 { font-size: clamp(1.5rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.25rem, 4vw, 2rem); }
+h3 { font-size: clamp(1.1rem, 3vw, 1.5rem); }
+p { font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.6; }
+
+/* Адаптивные отступы */
+section {
+    padding: clamp(60px, 10vh, 100px) 0;
+}
+
+.section-header {
+    margin-bottom: clamp(30px, 5vh, 60px);
+}
+
+/* Гриды - плавная адаптация */
+.services-grid,
+.portfolio-grid,
+.stats-grid,
+.footer-extended {
+    display: grid;
+    gap: clamp(16px, 3vw, 32px);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+/* Карточки */
+.service-card,
+.portfolio-item {
+    min-height: 200px;
+    padding: clamp(20px, 2.5vw, 32px);
+}
+
+/* Кнопки */
+.btn {
+    padding: clamp(10px, 2vw, 16px) clamp(20px, 4vw, 32px);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Навигация - только мобильное меню */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--color-bg-secondary);
+        flex-direction: column;
+        padding: 20px;
+        gap: 12px;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .about-visual {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-extended {
+        text-align: center;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .chat-container {
+        height: 400px;
+        max-width: 100%;
+    }
+
+    .cursor,
+    .cursor-follower {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+}
+
+/* Десктоп - показываем дополнительные элементы */
+@media (min-width: 769px) {
+    .hero-visual {
+        display: block;
+    }
+
+    .about-visual {
+        display: block;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        transform: none;
+        opacity: 1;
+        padding: 0;
+        gap: 32px;
+    }
+}
+
+/* Простая адаптация форм */
+.contact-form {
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .contact-form {
+        padding: 32px;
+    }
+}
+
+/* Скрытие не нужного на мобильных */
+.floating-card {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .floating-card {
+        display: block;
+    }
+}
+
+/* Упрощенная адаптация ASCII */
+.ascii-title {
+    font-size: clamp(0.4rem, 2vw, 0.8rem);
+    line-height: 1.2;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+/* Простая адаптация футера */
+.footer {
+    padding: 40px 0 20px;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        padding: 60px 0 30px;
+    }
+}
+
+/* Адаптивные изображения */
+img,
+.service-image-wrapper,
+.portfolio-item {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Минимальная ширина для контента */
+.about-text,
+.contact-info {
+    min-width: 280px;
+}
+
+/* Упрощенные отступы для маленьких экранов */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .hero {
+        padding: 80px 16px 40px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

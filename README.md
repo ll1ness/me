@@ -22,7 +22,10 @@ Modern, animated website for a digital development agency with dark theme and sm
 └── README.md     # This file
 ```
 
-##### Do not open in local file (index.html).
+## 🚀 Getting Started
+
+1. Open `index.html` in a modern web browser
+2. No build process or dependencies required - pure HTML/CSS/JS
 
 ## 🧪 Testing Responsiveness
 

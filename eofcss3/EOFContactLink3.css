@@ -1,0 +1,16 @@
+/* ===== Chat Trigger ===== */
+.chat-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-md);
+    margin-top: 8px;
+}
+
+.chat-trigger:hover {
+    opacity: 0.9;
+    color: white !important;
+}
+

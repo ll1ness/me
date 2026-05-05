@@ -1,0 +1,80 @@
+/* ===== Простая адаптивность чата ===== */
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    .chat-container {
+        height: 400px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .chat-header {
+        padding: 12px 16px;
+        min-height: 48px;
+    }
+
+    .chat-messages {
+        padding: 12px;
+        max-height: 250px;
+    }
+
+    .chat-input-area {
+        padding: 10px;
+    }
+
+    .chat-input {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .chat-send {
+        width: 40px;
+        height: 40px;
+    }
+
+    .chat-message {
+        max-width: 85%;
+    }
+}
+
+/* Десктоп */
+@media (min-width: 769px) {
+    .chat-container {
+        height: 550px;
+        max-width: 100%;
+    }
+
+    .chat-header {
+        padding: 16px 24px;
+    }
+
+    .chat-messages {
+        padding: 16px;
+        max-height: 400px;
+    }
+
+    .chat-input-area {
+        padding: 14px 20px;
+    }
+
+    .chat-input {
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+
+    .chat-send {
+        width: 48px;
+        height: 48px;
+    }
+
+    .chat-message {
+        max-width: 75%;
+    }
+}
+
+/* Упрощенные анимации */
+@media (prefers-reduced-motion: reduce) {
+    .chat-message {
+        animation: none;
+    }
+}

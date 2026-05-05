@@ -1,0 +1,21 @@
+{
+  "name": "ll1ness-website",
+  "version": "1.0.0",
+  "description": "ЛІНЕСС website with AppWrite integration",
+  "main": "index.html",
+  "scripts": {
+    "setup-appwrite": "node setup-appwrite.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "appwrite": "^11.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "keywords": [
+    "appwrite",
+    "website",
+    "portfolio"
+  ],
+  "author": "ЛІНЕСС",
+  "license": "MIT"
+}
